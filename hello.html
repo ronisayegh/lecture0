@@ -3,10 +3,72 @@
 
 </head>
 <title>My Webpage :)</title>
+<link rel="stylesheet" href="styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 
 <body>
-    Hello World! Hello again! And finally, hello!!!
+  <header class="mainheader">
+    <nav>
+    <img src="sc.jpg">
+    <h1>Sayegh Center</h1>
+    <input type="text" placeholder="Search...">
+    <div class="header-right">
+      <a id ="sign" href="#signin">Sign In</a>
+      <a id = "favo" href="#fav">Favorites</a>
+      <a href="#cart">Cart</a>
+    </div>
+  </nav>
+</header>
+
+
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="image1.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <img src="image2.jpg" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <img src="image3.jpg" style="width:100%">
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000); // Change image every 2 seconds
+}
+</script>
+
 </body>
 
 </html>
